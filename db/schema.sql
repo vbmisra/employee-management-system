@@ -5,7 +5,7 @@ USE cms_db;
 
 CREATE TABLE department (
     id INT NOT NULL,
-    name VARCHAR(30),
+    department_name VARCHAR(30),
     PRIMARY KEY (id)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE roles (
     department_id INT,
     FOREIGN KEY (department_id) REFERENCES department(id)
     ON DELETE SET NULL
-)
+);
 
 CREATE TABLE employee (
     id INT NOT NULL,
@@ -28,4 +28,4 @@ CREATE TABLE employee (
     ON DELETE SET NULL,
     FOREIGN KEY (manager_id) REFERENCES employee(id)
     ON DELETE SET NULL
-)
+);
